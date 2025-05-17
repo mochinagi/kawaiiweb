@@ -1,0 +1,160 @@
+/* 全局样式 */
+body {
+    background: linear-gradient(135deg, #fff0f5, #ffd9e8);
+    font-family: 'DotGothic16', sans-serif;
+    margin: 0;
+    padding: 40px;
+    box-sizing: border-box;
+    color: #d63384;
+}
+
+/* 主容器布局 */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 36px;
+    max-width: 1280px;
+    margin: auto;
+}
+
+/* 栏样式 */
+.column,
+.center-column {
+    background-color: #ffe4ecdd;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 10px 18px rgba(214, 51, 132, 0.15);
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 中间栏特殊样式 */
+.center-column {
+    text-align: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* 表单和按钮 */
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 14px;
+    border: 1.5px solid #c71585cc;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #ffb6c1;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #800040;
+    box-shadow: 0 4px 6px #ffb6c166;
+    transition: background-color 0.25s ease;
+}
+
+button:hover {
+    background-color: #ff8fa3;
+}
+
+/* 列表 */
+ul {
+    padding-left: 16px;
+    margin: 0;
+    max-height: 220px;
+    overflow-y: auto;
+}
+
+/* 每日一句 */
+.bunny-message {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffe4ec;
+    border-radius: 20px;
+    padding: 12px 24px;
+    box-shadow: 0 8px 12px rgba(214, 51, 132, 0.2);
+    font-weight: bold;
+    color: #c71585;
+    z-index: 1000;
+    font-size: 1rem;
+}
+
+
+/* 加载动画 */
+/* 容器居中，背景半透明 */
+#bunnyLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* 小兔子转圈动画 */
+.bunny-spinner {
+    font-size: 64px;
+    animation: spin 1.5s linear infinite;
+    user-select: none;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 会动的猫猫 */
+.cat-animation {
+    width: 32px;
+    height: 32px;
+    background-image: url('./images/Idle.png');
+    /* 请确保路径正确 */
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    image-rendering: pixelated;
+    /* 保持像素风格 */
+    margin: 2rem auto;
+}
+
+/* 天气插件样式（可自行美化） */
+#weatherWidget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff0f5;
+    padding: 12px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 响应式 */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 16px;
+    }
+}

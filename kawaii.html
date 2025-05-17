@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>うさちゃんの毎日</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- 加载动画 -->
+    <div id="bunnyLoader" class="loader">
+        <div class="bunny-spinner" title="読み込み中...">🐰</div>
+    </div>
+
+    <!-- 会动的猫猫 -->
+    <div class="cat-animation"></div>
+
+
+    <!-- 天气插件 -->
+    <div id="weatherWidget">
+        <div id="weatherEmoji">⏳</div>
+        <div id="tempText">読み込み中…</div>
+        <div id="weatherDesc">お待ちください</div>
+    </div>
+
+    <!-- 像素小兔兔 -->
+    <div id="pixelBunny" title="うさちゃん"></div>
+
+    <!-- 每日一句 -->
+    <div id="bunnyMessage" class="bunny-message">
+        💌 うさちゃんからのメッセージ：<span id="dailyMessage"></span>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="main-container">
+        <!-- 左栏：ToDo & Memo -->
+        <div class="column">
+            <h2>🎀 今日のやること 🎀</h2>
+            <input id="todoInput" placeholder="やることを入力..." />
+            <button onclick="addTodo()">追加</button>
+            <ul id="todoList"></ul>
+
+            <h2>🧸 メモ 🧸</h2>
+            <textarea id="noteInput" placeholder="ここに書いてね..." rows="4"></textarea>
+            <button onclick="addNote()">保存</button>
+            <ul id="noteList"></ul>
+        </div>
+
+        <!-- 中栏：主标题 & 笑脸 -->
+        <div class="center-column">
+            <h1>🌸 うさちゃんの毎日 🌸</h1>
+            <p id="birthdayCountdown"></p>
+            <p>😊 にっこり回数：<span id="smileCount">0</span></p>
+            <button onclick="addSmile()">😊 にっこり！</button>
+            <div>
+                <button>🤗 ハグ！</button>
+                <button>🎁 プレゼント</button>
+            </div>
+        </div>
+
+        <!-- 右栏：留言 -->
+        <div class="column">
+            <h2>💌 メッセージボックス 💌</h2>
+            <textarea placeholder="メッセージを書いてね..." rows="5"></textarea>
+            <button>送信</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
